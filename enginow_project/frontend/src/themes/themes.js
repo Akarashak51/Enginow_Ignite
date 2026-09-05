@@ -1,0 +1,188 @@
+// Theme configuration for the application
+// Provides multiple theme options with consistent Avenir font
+
+export const themes = {
+  light: {
+    name: 'Light',
+    colors: {
+      background: '#ffffff',
+      foreground: '#000000',
+      primary: '#2563eb',
+      secondary: '#1d4ed8',
+      accent: '#06b6d4',
+      muted: '#64748b',
+      border: '#e2e8f0',
+      surface: '#f8fafc',
+      textPrimary: '#000000',
+      textSecondary: '#475569',
+      textMuted: '#64748b',
+    },
+    css: {
+      '--bg-primary': '#ffffff',
+      '--text-primary': '#000000',
+      '--text-secondary': '#475569',
+      '--text-accent': '#1d4ed8',
+      '--border-color': '#e2e8f0',
+      '--surface-color': '#f8fafc',
+    },
+  },
+  dark: {
+    name: 'Dark',
+    colors: {
+      background: '#090909',
+      foreground: '#ffffff',
+      primary: '#3b82f6',
+      primaryAccent: '#3b82f6',
+      textOnPrimary: '#ffffff',
+      secondary: '#2563eb',
+      accent: '#3b82f6',
+      muted: '#9CA3AF',
+      border: '#2C2C2C',
+      surface: '#111111',
+      textPrimary: '#ffffff',
+      textSecondary: '#D1D5DB',
+      textMuted: '#9CA3AF',
+    },
+    css: {
+      '--bg-primary': '#090909',
+      '--text-primary': '#ffffff',
+      '--text-secondary': '#D1D5DB',
+      '--text-accent': '#3b82f6',
+      '--border-color': '#2C2C2C',
+      '--surface-color': '#111111',
+    },
+  },
+  ocean: {
+    name: 'Ocean',
+    colors: {
+      background: '#e0f2fe',
+      foreground: '#0c2d48',
+      primary: '#0ea5e9',
+      secondary: '#06b6d4',
+      accent: '#0369a1',
+      muted: '#0c4a6e',
+      border: '#7dd3fc',
+      surface: '#cffafe',
+      textPrimary: '#0c2d48',
+      textSecondary: '#0369a1',
+      textMuted: '#0c4a6e',
+    },
+    css: {
+      '--bg-primary': '#e0f2fe',
+      '--text-primary': '#0c2d48',
+      '--text-secondary': '#0369a1',
+      '--text-accent': '#0369a1',
+      '--border-color': '#7dd3fc',
+      '--surface-color': '#cffafe',
+    },
+  },
+  forest: {
+    name: 'Forest',
+    colors: {
+      background: '#f0fdf4',
+      foreground: '#1b4332',
+      primary: '#16a34a',
+      secondary: '#059669',
+      accent: '#7c2d12',
+      muted: '#15803d',
+      border: '#86efac',
+      surface: '#dcfce7',
+      textPrimary: '#1b4332',
+      textSecondary: '#15803d',
+      textMuted: '#15803d',
+    },
+    css: {
+      '--bg-primary': '#f0fdf4',
+      '--text-primary': '#1b4332',
+      '--text-secondary': '#15803d',
+      '--text-accent': '#047857',
+      '--border-color': '#86efac',
+      '--surface-color': '#dcfce7',
+    },
+  },
+  sunset: {
+    name: 'Sunset',
+    colors: {
+      background: '#fef3c7',
+      foreground: '#78350f',
+      primary: '#f59e0b',
+      secondary: '#f97316',
+      accent: '#dc2626',
+      muted: '#ea580c',
+      border: '#fbbf24',
+      surface: '#fcd34d',
+      textPrimary: '#78350f',
+      textSecondary: '#ea580c',
+      textMuted: '#ea580c',
+    },
+    css: {
+      '--bg-primary': '#fef3c7',
+      '--text-primary': '#78350f',
+      '--text-secondary': '#ea580c',
+      '--text-accent': '#b45309',
+      '--border-color': '#fbbf24',
+      '--surface-color': '#fcd34d',
+    },
+  },
+  lavender: {
+    name: 'Lavender',
+    colors: {
+      background: '#faf5ff',
+      foreground: '#3f0f8f',
+      primary: '#a78bfa',
+      secondary: '#d8b4fe',
+      accent: '#c084fc',
+      muted: '#7c3aed',
+      border: '#e9d5ff',
+      surface: '#f3e8ff',
+      textPrimary: '#3f0f8f',
+      textSecondary: '#7c3aed',
+      textMuted: '#7c3aed',
+    },
+    css: {
+      '--bg-primary': '#faf5ff',
+      '--text-primary': '#3f0f8f',
+      '--text-secondary': '#7c3aed',
+      '--text-accent': '#6d28d9',
+      '--border-color': '#e9d5ff',
+      '--surface-color': '#f3e8ff',
+    },
+  },
+  monochrome: {
+    name: 'Monochrome',
+    colors: {
+      background: '#f5f5f5',
+      foreground: '#1a1a1a',
+      primary: '#404040',
+      secondary: '#595959',
+      accent: '#000000',
+      muted: '#808080',
+      border: '#d9d9d9',
+      surface: '#eeeeee',
+      textPrimary: '#1a1a1a',
+      textSecondary: '#595959',
+      textMuted: '#808080',
+    },
+    css: {
+      '--bg-primary': '#f5f5f5',
+      '--text-primary': '#1a1a1a',
+      '--text-secondary': '#595959',
+      '--text-accent': '#404040',
+      '--border-color': '#d9d9d9',
+      '--surface-color': '#eeeeee',
+    },
+  },
+};
+
+export const defaultTheme = 'light';
+
+export const getTheme = (themeName) => {
+  return themes[themeName] || themes[defaultTheme];
+};
+
+export const getAllThemes = () => {
+  return Object.entries(themes).map(([key, value]) => ({
+    id: key,
+    ...value,
+  }));
+};
